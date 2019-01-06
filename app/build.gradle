@@ -15,6 +15,8 @@
  *
  */
 
+import app.tivi.build.Libs
+
 ext {
     ci = System.getenv("CI") == "true"
 }
@@ -159,9 +161,9 @@ dependencies {
     implementation project(':interactors')
     implementation project(":tasks")
 
-    implementation "androidx.lifecycle:lifecycle-extensions:${versions.androidx.lifecycle}"
-    implementation "androidx.lifecycle:lifecycle-reactivestreams:${versions.androidx.lifecycle}"
-    kapt "androidx.lifecycle:lifecycle-compiler:${versions.androidx.lifecycle}"
+    implementation Libs.AndroidX.Lifecycle.extensions
+    implementation Libs.AndroidX.Lifecycle.reactive
+    kapt Libs.AndroidX.Lifecycle.compiler
 
     implementation "androidx.room:room-runtime:${versions.androidx.room}"
 
